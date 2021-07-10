@@ -122,38 +122,38 @@ public class Grid_Manager : MonoBehaviour
         return SetTile(gridPos.x, gridPos.y, _tile);
     }
 
-    public Grid_Cell GetCell(int _gridX, int _gridY)
+    public Grid_Cell GetCell(int _gridX, int _gridY, bool _transformCoords = true)
     {
-        return QueryGridArrays(_gridX, _gridY);
+        return QueryGridArrays(_gridX, _gridY, _transformCoords);
     }
 
-    public Grid_Cell GetCell(Vector3 _worldPos)
+    public Grid_Cell GetCell(Vector3 _worldPos, bool _transformCoords = true)
     {
         var gridPos = m_grid.WorldToCell(_worldPos);
-        return GetCell(gridPos.x, gridPos.y);
+        return GetCell(gridPos.x, gridPos.y, _transformCoords);
     }
 
-    public bool GetCellOpen(int _gridX, int _gridY)
+    public bool GetCellOpen(int _gridX, int _gridY, bool _transformCoords = true)
     {
-        var cell = GetCell(_gridX, _gridY);
+        var cell = GetCell(_gridX, _gridY, _transformCoords);
         return (cell != null && cell.AttachedItemTile == null);
     }
 
-    public bool GetTileOpen(Vector3 _worldPos)
+    public bool GetTileOpen(Vector3 _worldPos, bool _transformCoords = true)
     {
-        var cell = GetCell(_worldPos);
+        var cell = GetCell(_worldPos, _transformCoords);
         return (cell != null && cell.AttachedItemTile == null);
     }
 
 
 
     //--- Utility Methods ---//
-    private Grid_Cell QueryGridArrays(int _gridCoordX, int _gridCoordY)
+    private Grid_Cell QueryGridArrays(int _gridCoordX, int _gridCoordY, bool _transformCoords = true)
     {
-        // Need to convert the coordinates from [-halfWidth, halfWidth] to [0,width]
+        // May need to convert the coordinates from [-halfWidth, halfWidth] to [0, width]
         // This way, the arrays can be accessed correctly, without having negative indices
-        int arrayIndexX = _gridCoordX + (m_gridDimensions.x / 2);
-        int arrayIndexY = _gridCoordY + (m_gridDimensions.y / 2);
+        int arrayIndexX = (_transformCoords) ? _gridCoordX + (m_gridDimensions.x / 2) : _gridCoordX;
+        int arrayIndexY = (_transformCoords) ? _gridCoordY + (m_gridDimensions.y / 2) : _gridCoordY;
 
         // Ensure the indices are actual in the bounds of the grid
         if (arrayIndexX < 0 || arrayIndexX >= m_gridDimensions.x ||

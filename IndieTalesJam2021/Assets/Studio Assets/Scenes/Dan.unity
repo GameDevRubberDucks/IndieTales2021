@@ -2600,6 +2600,7 @@ GameObject:
   - component: {fileID: 582966871}
   - component: {fileID: 582966869}
   - component: {fileID: 582966872}
+  - component: {fileID: 582966873}
   m_Layer: 0
   m_Name: Grid_Manager
   m_TagString: Untagged
@@ -2681,6 +2682,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
   - {fileID: 21300000, guid: 97b40ffdd52711d4ea64fb5517cd7727, type: 3}
   m_highestSpawnableItem: 6
+--- !u!114 &582966873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582966868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d33c537d0aa90468447721b1cc7728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &584650763
 GameObject:
   m_ObjectHideFlags: 0

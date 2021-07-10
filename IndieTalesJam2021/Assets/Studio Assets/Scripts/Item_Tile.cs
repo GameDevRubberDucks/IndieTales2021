@@ -18,9 +18,14 @@ public class Item_Tile : MonoBehaviour
 
 
 
-    //--- Setters ---//
+    //--- Setters and Getters ---//
     public void SetAttachedCell(Grid_Cell _attachedCell)
     {
         m_attachedCell = _attachedCell;
+    }
+
+    public Item_Type GetItemType()
+    {
+        return m_itemType;
     }
 }
