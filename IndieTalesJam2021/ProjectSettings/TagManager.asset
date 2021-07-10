@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlacedTiles
+    uniqueID: 1515958323
+    locked: 0
+  - name: HoverTIles
+    uniqueID: 516167385
+    locked: 0

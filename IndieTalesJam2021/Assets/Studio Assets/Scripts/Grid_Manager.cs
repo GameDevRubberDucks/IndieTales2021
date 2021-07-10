@@ -17,6 +17,7 @@ public class Grid_Manager : MonoBehaviour
 
     [Header("Tiles")]
     public Transform m_tileParent;
+    public string m_tileSortingLayer;
 
 
 
@@ -95,6 +96,9 @@ public class Grid_Manager : MonoBehaviour
 
         // Detach the tile from its parent and re-parent it here instead
         _tile.transform.parent = this.m_tileParent;
+
+        // Update the layering so that it now appears behind new tiles being placed
+        _tile.GetComponent<SpriteRenderer>().sortingLayerName = m_tileSortingLayer;
     }
 
 

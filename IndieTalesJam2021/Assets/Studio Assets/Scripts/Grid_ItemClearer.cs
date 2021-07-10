@@ -12,6 +12,7 @@ public class Grid_ItemClearer : MonoBehaviour
 
     //--- Private Variables ---//
     private Grid_Manager m_gridManager;
+    private Game_Score m_gameScore;
     private static Dictionary<int, Vector2Int> m_directions = new Dictionary<int, Vector2Int>{{0, Vector2Int.up},
                                                                                             {1, Vector2Int.right},
                                                                                             {2, Vector2Int.down},
@@ -24,6 +25,7 @@ public class Grid_ItemClearer : MonoBehaviour
     {
         // Init the private variables
         m_gridManager = GetComponent<Grid_Manager>();
+        m_gameScore = FindObjectOfType<Game_Score>();
     }
 
     private void Update()
@@ -61,7 +63,7 @@ public class Grid_ItemClearer : MonoBehaviour
                     Debug.Log("Found island of size: " + searchLists.m_allIslandCells.Count);
 
                     // Clear the island
-                    searchLists.m_allIslandCells.Clear();
+                    ClearIsland(searchLists.m_allIslandCells);
                 }
             }
         }
@@ -114,6 +116,22 @@ public class Grid_ItemClearer : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void ClearIsland(List<Grid_Cell> _islandTiles)
+    {
+        m_gameScore.HandleIslandScore(_islandTiles);
+
+        // Detach all of the tiles from the grid and then destroy them
+        foreach (var cell in _islandTiles)
+        {
+            // TODO: play particles
+            Destroy(cell.AttachedItemTile.gameObject);
+            cell.AttachedItemTile = null;
+        }
+
+        // Finish by clearing the island list now
+        _islandTiles.Clear();
     }
 
     //private void SearchForNeighbours(Grid_Cell _cell, Item_Type _type, Vector2Int _coord, SearchLists _lists)
