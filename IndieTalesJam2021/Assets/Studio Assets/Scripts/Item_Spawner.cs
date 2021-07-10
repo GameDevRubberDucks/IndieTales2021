@@ -6,7 +6,7 @@ public enum Item_Type
     Bananas,
     Oranges,
     Grapes,
-    Watermelons,
+    Limes,
 
     Count,
     All
@@ -34,6 +34,11 @@ public class Item_Spawner : MonoBehaviour
     //--- Public Methods ---//
     public void SpawnItem()
     {
+        // DELETE THIS AFTER!
+        var existingItem = FindObjectOfType<Item>();
+        if (existingItem)
+            Destroy(existingItem.gameObject);
+
         // Spawn a random tetronimo
         int tetroIdx = Random.Range(0, m_itemTetronimoPrefabs.Length);
         GameObject tetroObj = Instantiate(m_itemTetronimoPrefabs[tetroIdx]);
