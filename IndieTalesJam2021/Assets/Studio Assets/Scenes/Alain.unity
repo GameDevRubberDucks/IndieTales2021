@@ -683,6 +683,12 @@ MonoBehaviour:
   saleIcon: {fileID: 8592589637661665434, guid: 788987cab5d02194394cacff32856463, type: 3}
   iconSpawnPos: {fileID: 125274819}
   timelineMask: {fileID: 952732651}
+  iconSprites:
+  - {fileID: 21300000, guid: 4332fcf434bd5224d8d3298504438eb2, type: 3}
+  - {fileID: 21300000, guid: cf9d9ca1804c0634886f5cf4f5b57e8e, type: 3}
+  - {fileID: 21300000, guid: 3803e05ba721ca249a6ca9e203e50256, type: 3}
+  - {fileID: 21300000, guid: e89380ba8d1fa1446927da1211a1e610, type: 3}
+  - {fileID: 21300000, guid: aacaed176aa25ab468adff8fcc800f24, type: 3}
 --- !u!1 &2033296308
 GameObject:
   m_ObjectHideFlags: 0

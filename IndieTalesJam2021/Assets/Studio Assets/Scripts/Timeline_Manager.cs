@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timeline_Manager : MonoBehaviour
 {
@@ -10,8 +11,12 @@ public class Timeline_Manager : MonoBehaviour
     //Private Variables
     [SerializeField] private RectTransform iconSpawnPos;
     [SerializeField] private GameObject timelineMask;
+    [SerializeField] private List<Sprite> iconSprites;
 
     private Timeline_Animate timelineAnimator;
+
+    //only used to simulate new sale colour
+    //private int fruit;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +35,7 @@ public class Timeline_Manager : MonoBehaviour
     {
         //Create new icon
         GameObject saleIconObject = Instantiate(saleIcon);
-        
+
         //set proper colour of sale icon
         SetSaleIcon(saleIconObject);
 
@@ -44,8 +49,9 @@ public class Timeline_Manager : MonoBehaviour
 
     private void SetSaleIcon(GameObject icon)
     {
-        int fruit = 0;
+        int fruit = Random.Range(0, 4);
 
         //Set which sale icon to use.
+        icon.GetComponent<Image>().sprite = iconSprites[fruit];
     }
 }
