@@ -40,9 +40,22 @@ public class Timeline_Animate : MonoBehaviour
         //Loop through all the sale icons and tween positions.
         for (int i = 0; i < existingSaleIcons.Count; i++)
         {
-            existingSaleIcons[i].GetComponent<RectTransform>().DOLocalMoveX(existingSaleIcons[i].GetComponent<RectTransform>().localPosition.x + tweenDist, tweenDuration, false);
-            
-            
+            existingSaleIcons[i].GetComponent<RectTransform>().DOLocalMoveX(existingSaleIcons[i].GetComponent<RectTransform>().localPosition.x + tweenDist, tweenDuration, false);      
+        }
+
+        ClearOldIcons();
+    }
+
+    private void ClearOldIcons()
+    {
+        //Loop through all the sale icons and check x positions
+        for (int i = 0; i < existingSaleIcons.Count; i++)
+        {
+            if (existingSaleIcons[i].GetComponent<RectTransform>().localPosition.x > 400)
+            {
+                Destroy(existingSaleIcons[i]);
+                existingSaleIcons.Remove(existingSaleIcons[i]);
+            }
         }
     }
 
