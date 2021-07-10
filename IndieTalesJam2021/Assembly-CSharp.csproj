@@ -61,6 +61,9 @@
   <ItemGroup>
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Util\Util_ClearChildren.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Cell_MouseFollow.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Grid_Snapper.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Cell_Rotator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Studio Assets\Scripts\PLACEHOLDER.txt" />

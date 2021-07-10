@@ -42,6 +42,7 @@ public class Grid_Manager : MonoBehaviour
     //--- Public Methods ---//
     [ContextMenu("Generate Grid")]
     public void GenerateGrid()
+
     {
         // First, clear any existing tiles
         ClearGrid();
