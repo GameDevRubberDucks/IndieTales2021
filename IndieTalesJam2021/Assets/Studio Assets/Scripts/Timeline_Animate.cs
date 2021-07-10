@@ -13,10 +13,12 @@ public class Timeline_Animate : MonoBehaviour
     [SerializeField] private RectTransform timeline;
     [SerializeField] private List<GameObject> existingSaleIcons;
 
+    private Vector3 timelineStartPos;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        timelineStartPos = timeline.localPosition;
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class Timeline_Animate : MonoBehaviour
     public void TimelineNewDay()
     {
         //Tween Position of timeline
-        timeline.DOLocalMoveX(tweenDist, tweenDuration, false)
+        timeline.DOLocalMoveX(timeline.localPosition.x + tweenDist, tweenDuration, false)
             .OnComplete(ResetTimeline);
 
         //Loop through all the sale icons and tween positions.
@@ -62,6 +64,6 @@ public class Timeline_Animate : MonoBehaviour
     private void ResetTimeline()
     {
         //Reset timeline position back to start
-        timeline.transform.localPosition = new Vector3(0, -30);
+        timeline.transform.localPosition = timelineStartPos;
     }
 }
