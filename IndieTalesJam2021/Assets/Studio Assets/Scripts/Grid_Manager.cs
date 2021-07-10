@@ -19,6 +19,7 @@ public class Grid_Manager : MonoBehaviour
 
     //--- Private Variables ---//
     private Grid m_grid;
+    private Grid_Cell[,] m_gridCells;
 
 
 
@@ -27,7 +28,12 @@ public class Grid_Manager : MonoBehaviour
     {
         // Init the private variables
         m_grid = GetComponent<Grid>();
-        var go = new GameObject();
+        m_gridCells = new Grid_Cell[m_gridDimensions.x, m_gridDimensions.y];
+        for (int x = 0; x < m_gridDimensions.x; x++)
+        {
+            for (int y = 0; y < m_gridDimensions.y; y++)
+                m_gridCells[x, y] = new Grid_Cell();
+        }
     }
 
     private void Start()
@@ -42,7 +48,6 @@ public class Grid_Manager : MonoBehaviour
     //--- Public Methods ---//
     [ContextMenu("Generate Grid")]
     public void GenerateGrid()
-
     {
         // First, clear any existing tiles
         ClearGrid();
@@ -75,5 +80,74 @@ public class Grid_Manager : MonoBehaviour
     {
         // Delete all of the grid cells by removing any children from the grid parent
         Util_ClearChildren.ClearChildren(m_gridCellParent, true);
+    }
+
+
+
+    //--- Setters and Getters ---//
+    public bool SetTile(int _gridX, int _gridY, Item_Tile _tile)
+    {
+        // If the cell is open, attach the tile to it. Otherwise, return false to say it is already filled
+        var gridCell = QueryGridArrays(_gridX, _gridY);
+        if (gridCell != null && gridCell.IsOpen)
+        {
+            gridCell.AttachedItemTile = _tile;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public bool SetTile(Vector3 _worldPos, Item_Tile _tile)
+    {
+        // Convert the world position to a grid position
+        var gridPos = m_grid.WorldToCell(_worldPos);
+
+        // Use the grid position to set the tile normally
+        return SetTile(gridPos.x, gridPos.y, _tile);
+    }
+
+    public Grid_Cell GetCell(int _gridX, int _gridY)
+    {
+        return QueryGridArrays(_gridX, _gridY);
+    }
+
+    public Grid_Cell GetCell(Vector3 _worldPos)
+    {
+        var gridPos = m_grid.WorldToCell(_worldPos);
+        return GetCell(gridPos.x, gridPos.y);
+    }
+
+    public bool GetCellOpen(int _gridX, int _gridY)
+    {
+        var cell = GetCell(_gridX, _gridY);
+        return (cell != null && cell.AttachedItemTile == null);
+    }
+
+    public bool GetTileOpen(Vector3 _worldPos)
+    {
+        var cell = GetCell(_worldPos);
+        return (cell != null && cell.AttachedItemTile == null);
+    }
+
+
+
+    //--- Utility Methods ---//
+    private Grid_Cell QueryGridArrays(int _gridCoordX, int _gridCoordY)
+    {
+        // Need to convert the coordinates from [-halfWidth, halfWidth] to [0,width]
+        // This way, the arrays can be accessed correctly, without having negative indices
+        //int arrayIndexX = (_gridCoordX * 2) + (m_gridDimensions.x / 2);
+        //int arrayIndexY = (_gridCoordY * 2) + (m_gridDimensions.y / 2);
+        int arrayIndexX = _gridCoordX + (m_gridDimensions.x / 2);
+        int arrayIndexY = _gridCoordY + (m_gridDimensions.y / 2);
+
+        // Ensure the indices are actual in the bounds of the grid
+        if (arrayIndexX < 0 || arrayIndexX >= m_gridDimensions.x ||
+            arrayIndexY < 0 || arrayIndexY >= m_gridDimensions.y)
+            return null;
+
+        // Return the tile at the given position
+        return m_gridCells[arrayIndexX, arrayIndexY];
     }
 }

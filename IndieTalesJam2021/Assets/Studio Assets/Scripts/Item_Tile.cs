@@ -4,6 +4,7 @@ public class Item_Tile : MonoBehaviour
 {
     //--- Private Variables ---//
     private Item_Type m_itemType;
+    private Grid_Cell m_attachedCell;
 
 
 
@@ -13,5 +14,13 @@ public class Item_Tile : MonoBehaviour
         // Store the new data
         m_itemType = _itemType;
         GetComponent<SpriteRenderer>().sprite = _sprite;
+    }
+
+
+
+    //--- Setters ---//
+    public void SetAttachedCell(Grid_Cell _attachedCell)
+    {
+        m_attachedCell = _attachedCell;
     }
 }

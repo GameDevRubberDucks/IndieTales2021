@@ -196,9 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706c7d3123b5b2943a37c32d18817d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_colValidPlace: {r: 0.49502647, g: 1, b: 0, a: 1}
-  m_colInvalidPlace: {r: 1, g: 0.019191347, b: 0, a: 1}
-  m_colPlaced: {r: 1, g: 1, b: 1, a: 1}
+  m_validIndicator: {fileID: 5862313638393478753}
+  m_invalidIndicator: {fileID: 9176568451701658454}
 --- !u!114 &8512486863039117053
 MonoBehaviour:
   m_ObjectHideFlags: 0
