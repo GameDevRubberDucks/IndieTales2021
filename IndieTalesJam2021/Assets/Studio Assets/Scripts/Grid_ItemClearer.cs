@@ -47,8 +47,6 @@ public class Grid_ItemClearer : MonoBehaviour
     //--- Public Methods ---//
     public void ClearItems(Item_Type _type)
     {
-        Debug.Log("Searching for: " + _type.ToString());
-
         // Keep track of all of the tiles throughout the search
         SearchLists searchLists = new SearchLists();
 
@@ -59,17 +57,11 @@ public class Grid_ItemClearer : MonoBehaviour
             {
                 if (SearchCell(x, y, _type, searchLists))
                 {
-                    // We found a new island
-                    Debug.Log("Found island of size: " + searchLists.m_allIslandCells.Count);
-
-                    // Clear the island
+                    // We found a new island so we should clear it from the board
                     ClearIsland(searchLists.m_allIslandCells);
                 }
             }
         }
-
-        Debug.Log("Found a total count of: " + searchLists.m_allFlaggedCells.Count);
-        Debug.Log("Searched a total count of: " + searchLists.m_allSearchedCells.Count);
     }
 
     private bool SearchCell(int _x, int _y, Item_Type _type, SearchLists _searchLists)

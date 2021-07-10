@@ -9,7 +9,8 @@ public enum Item_Type
     Limes,
 
     Count,
-    All
+    All,
+    None
 }
 
 public class Item_Spawner : MonoBehaviour
