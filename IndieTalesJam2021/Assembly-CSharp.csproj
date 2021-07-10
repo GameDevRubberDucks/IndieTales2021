@@ -63,14 +63,15 @@
     <Compile Include="Assets\Studio Assets\Scripts\Util\Util_ClearChildren.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Cell_MouseFollow.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Snapper.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\Cell_Rotator.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item_Rotator.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item_Tile.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Grid_Validator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Studio Assets\Scripts\PLACEHOLDER.txt" />
-    <None Include="Assets\Studio Assets\Sprites\PLACEHOLDER.txt" />
     <None Include="Assets\Studio Assets\Animations\PLACEHOLDER.txt" />
     <None Include="Assets\Studio Assets\Audio\PLACEHOLDER.txt" />
-    <None Include="Assets\Studio Assets\Prefabs\PLACEHOLDER.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

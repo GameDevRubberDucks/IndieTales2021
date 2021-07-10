@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cell_Rotator : MonoBehaviour
+public class Item_Rotator : MonoBehaviour
 {
     //--- Public Variables ---//
     public KeyCode m_keyLeftRot;

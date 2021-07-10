@@ -25,7 +25,7 @@ public class Grid_Snapper : MonoBehaviour
     {
         // Move back to the correct position relative to the parent before snapping again
         // Prevents the object from getting stuck at a previous snap position
-        transform.localPosition = /*transform.parent.position +*/ m_initialOffset;
+        transform.localPosition = m_initialOffset;
 
         // Find what cell the object falls into now
         var cellCoord = m_grid.WorldToCell(transform.position);
@@ -33,7 +33,5 @@ public class Grid_Snapper : MonoBehaviour
         // Snap the object to the center of the relevant cell
         var cellCenterWorld = m_grid.GetCellCenterWorld(cellCoord);
         transform.position = new Vector3(cellCenterWorld.x, cellCenterWorld.y, m_zPos);
-
-        Debug.Log(cellCenterWorld);
     }
 }
