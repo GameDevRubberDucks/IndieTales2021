@@ -69,6 +69,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Validator.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Cell.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item_Placer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Studio Assets\Animations\PLACEHOLDER.txt" />

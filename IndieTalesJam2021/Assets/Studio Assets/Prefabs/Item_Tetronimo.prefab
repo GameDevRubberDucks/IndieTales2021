@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5258050140021609159}
   - component: {fileID: 5258050140021609153}
   - component: {fileID: 1321535685828583060}
+  - component: {fileID: 468519998180696244}
   m_Layer: 0
   m_Name: Item_Tetronimo
   m_TagString: Untagged
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ba20685c8d57a1409aa3808bc5cb8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &468519998180696244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258050140021609158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e2426d04b7dc040b934deb108b293a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &818759254764514616

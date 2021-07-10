@@ -32,6 +32,23 @@ public class Grid_Validator : MonoBehaviour
     }
 
 
+
+    //--- Public Methods ---//
+    public void PlaceIntoGrid()
+    {
+        // Place the tile
+        m_gridManager.PlaceTile(this.gameObject);
+
+        // Disable the grid snapping script
+        GetComponent<Grid_Snapper>().enabled = false;
+
+        // Disable this script since the tile no longer needs to be validated
+        m_validIndicator.SetActive(false);
+        m_invalidIndicator.SetActive(false);
+        this.enabled = false;
+    }
+
+
     
     //--- Getters ---//
     public bool GetIsValid() { return m_isValid; }

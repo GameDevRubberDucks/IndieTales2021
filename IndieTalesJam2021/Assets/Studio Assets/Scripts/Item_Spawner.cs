@@ -34,10 +34,9 @@ public class Item_Spawner : MonoBehaviour
     //--- Public Methods ---//
     public void SpawnItem()
     {
-        // DELETE THIS AFTER!
-        var existingItem = FindObjectOfType<Item>();
-        if (existingItem)
-            Destroy(existingItem.gameObject);
+        // If there is already an item currently being placed, back out
+        if (FindObjectOfType<Item>() != null)
+            return;
 
         // Spawn a random tetronimo
         int tetroIdx = Random.Range(0, m_itemTetronimoPrefabs.Length);

@@ -15,6 +15,9 @@ public class Grid_Manager : MonoBehaviour
     public GameObject m_gridCellPrefab;
     public GameObject m_gridBoundaryPrefab;
 
+    [Header("Tiles")]
+    public Transform m_tileParent;
+
 
 
     //--- Private Variables ---//
@@ -82,6 +85,18 @@ public class Grid_Manager : MonoBehaviour
         Util_ClearChildren.ClearChildren(m_gridCellParent, true);
     }
 
+    public void PlaceTile(GameObject _tile)
+    {
+        // Attach it to the grid cell
+        var cell = GetCell(_tile.transform.position);
+        var tileComp = _tile.GetComponent<Item_Tile>();
+        tileComp.SetAttachedCell(cell);
+        cell.AttachedItemTile = tileComp;
+
+        // Detach the tile from its parent and re-parent it here instead
+        _tile.transform.parent = this.m_tileParent;
+    }
+
 
 
     //--- Setters and Getters ---//
@@ -137,8 +152,6 @@ public class Grid_Manager : MonoBehaviour
     {
         // Need to convert the coordinates from [-halfWidth, halfWidth] to [0,width]
         // This way, the arrays can be accessed correctly, without having negative indices
-        //int arrayIndexX = (_gridCoordX * 2) + (m_gridDimensions.x / 2);
-        //int arrayIndexY = (_gridCoordY * 2) + (m_gridDimensions.y / 2);
         int arrayIndexX = _gridCoordX + (m_gridDimensions.x / 2);
         int arrayIndexY = _gridCoordY + (m_gridDimensions.y / 2);
 
