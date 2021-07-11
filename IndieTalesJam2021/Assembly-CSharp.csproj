@@ -86,6 +86,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Timeline_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Background_MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
