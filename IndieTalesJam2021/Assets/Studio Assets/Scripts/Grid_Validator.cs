@@ -3,15 +3,14 @@ using UnityEngine;
 public class Grid_Validator : MonoBehaviour
 {
     //--- Public Variables ---//
-    public Color m_colValidPlace;
-    public Color m_colInvalidPlace;
-    public Color m_colPlaced;
+    public GameObject m_validIndicator;
+    public GameObject m_invalidIndicator;
 
 
 
     //--- Private Variables ---//
-    private Grid m_grid;
-    private SpriteRenderer m_sprRend;
+    private Grid_Manager m_gridManager;
+    private bool m_isValid;
 
 
 
@@ -19,12 +18,38 @@ public class Grid_Validator : MonoBehaviour
     private void Awake()
     {
         // Init the private variables
-        m_grid = FindObjectOfType<Grid>();
-        m_sprRend = GetComponent<SpriteRenderer>();
+        m_gridManager = FindObjectOfType<Grid_Manager>();
     }
 
     private void LateUpdate()
     {
+        // Check the grid to see if the current position is valid on the grid
+        m_isValid = (m_gridManager.GetTileOpen(transform.position));
 
+        // Enable the correct indicator to show the validation state
+        m_validIndicator.SetActive(m_isValid);
+        m_invalidIndicator.SetActive(!m_isValid);
     }
+
+
+
+    //--- Public Methods ---//
+    public void PlaceIntoGrid()
+    {
+        // Place the tile
+        m_gridManager.PlaceTile(this.gameObject);
+
+        // Disable the grid snapping script
+        GetComponent<Grid_Snapper>().enabled = false;
+
+        // Disable this script since the tile no longer needs to be validated
+        m_validIndicator.SetActive(false);
+        m_invalidIndicator.SetActive(false);
+        this.enabled = false;
+    }
+
+
+    
+    //--- Getters ---//
+    public bool GetIsValid() { return m_isValid; }
 }

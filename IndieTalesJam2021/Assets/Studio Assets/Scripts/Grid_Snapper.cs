@@ -27,6 +27,9 @@ public class Grid_Snapper : MonoBehaviour
         // Prevents the object from getting stuck at a previous snap position
         transform.localPosition = m_initialOffset;
 
+        // Offset the parent's rotation so it is always facing upwards
+        transform.right = Vector3.right;
+
         // Find what cell the object falls into now
         var cellCoord = m_grid.WorldToCell(transform.position);
 
