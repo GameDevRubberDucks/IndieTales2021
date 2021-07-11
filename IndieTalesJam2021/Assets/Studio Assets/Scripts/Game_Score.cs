@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class Game_Score : MonoBehaviour
 {
     //--- Public Variables ---//
     public float m_scorePerItem;
     public float m_islandBonusPerItem;
-    public Text m_txtScore;
+    public TextMeshProUGUI m_txtScore;
 
 
 
@@ -36,6 +36,6 @@ public class Game_Score : MonoBehaviour
 
         // Update the score
         m_score += scoreIncrease;
-        m_txtScore.text = "Score: " + m_score.ToString("F0");
+        m_txtScore.text = "$ " + m_score.ToString("F0");
     }
 }
