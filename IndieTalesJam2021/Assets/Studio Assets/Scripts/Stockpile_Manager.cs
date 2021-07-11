@@ -25,22 +25,21 @@ public class Stockpile_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CheckCeiling();
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    CheckCeiling();
 
-            if (!aboveLimit)
-                SpawnShipment();
-            else
-                Debug.Log("<color=red>Too many shipments - fail.</color>");
-        }
-   
-            
+        //    if (!aboveLimit)
+        //        SpawnShipment();
+        //    else
+        //        Debug.Log("<color=red>Too many shipments - fail.</color>");
+        //}     
     }
 
-    public void SpawnShipment()
+    public void SpawnShipment(List<Item_Type> _itemsToSpawn)
     {
-        int numToSpawn = Random.Range(1, spawnMax + 1);
+        //int numToSpawn = Random.Range(1, spawnMax + 1);
+        int numToSpawn = _itemsToSpawn.Count;
 
         for (int i = 0; i < numToSpawn; i++)
         {

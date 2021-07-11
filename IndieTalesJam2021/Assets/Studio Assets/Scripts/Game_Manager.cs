@@ -31,6 +31,7 @@ public class Game_Manager : MonoBehaviour
     private Grid_ItemClearer m_gridClearer;
     private Timeline_Animate m_timelineAnimate;
     private Timeline_Manager m_timelineManager;
+    private Stockpile_Manager m_stockManager;
     private int m_currentDay;
 
 
@@ -41,6 +42,7 @@ public class Game_Manager : MonoBehaviour
         m_gridClearer = FindObjectOfType<Grid_ItemClearer>();
         m_timelineAnimate = FindObjectOfType<Timeline_Animate>();
         m_timelineManager = FindObjectOfType<Timeline_Manager>();
+        m_stockManager = FindObjectOfType<Stockpile_Manager>();
         m_currentDay = 1;
 
         GenerateAllDays();
@@ -78,7 +80,8 @@ public class Game_Manager : MonoBehaviour
             m_gridClearer.ClearItems(thisDay.m_sellType);
         }
 
-        // TODO: Drop in the deliveries
+        // Drop in the deliveries
+        m_stockManager.SpawnShipment(thisDay.m_deliveries);
     }
     
     public void EndDay()
