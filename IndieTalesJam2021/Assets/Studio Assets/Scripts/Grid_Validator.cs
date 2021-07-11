@@ -39,13 +39,13 @@ public class Grid_Validator : MonoBehaviour
         // Place the tile
         m_gridManager.PlaceTile(this.gameObject);
 
-        // Disable the grid snapping script
-        GetComponent<Grid_Snapper>().enabled = false;
-
         // Disable this script since the tile no longer needs to be validated
         m_validIndicator.SetActive(false);
         m_invalidIndicator.SetActive(false);
         this.enabled = false;
+
+        // Enable the tile grid snapper to ensure the tile stays put now
+        GetComponent<Grid_Snapper>().enabled = true;
     }
 
 

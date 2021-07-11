@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\Cell_MouseFollow.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Grid_MouseSnapper.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Stockpile_Manager.cs" />
@@ -84,6 +84,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Util\Util_ClearChildren.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Timeline_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DOTween\DOTween.XML" />

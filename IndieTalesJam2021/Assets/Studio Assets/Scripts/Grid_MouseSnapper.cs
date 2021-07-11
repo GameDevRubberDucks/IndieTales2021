@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cell_MouseFollow : MonoBehaviour
+public class Grid_MouseSnapper : MonoBehaviour
 {
     //--- Public Variables ---//
     public float m_zPos;
@@ -9,6 +9,7 @@ public class Cell_MouseFollow : MonoBehaviour
 
     //--- Private Variables ---//
     private Camera m_mainCam;
+    private Grid m_grid;
 
 
 
@@ -17,6 +18,7 @@ public class Cell_MouseFollow : MonoBehaviour
     {
         // Init the private variables
         m_mainCam = Camera.main;
+        m_grid = FindObjectOfType<Grid>();
     }
 
 
@@ -29,5 +31,12 @@ public class Cell_MouseFollow : MonoBehaviour
 
         // Move the object to match the world position
         transform.position = new Vector3(mousePosWorld.x, mousePosWorld.y, m_zPos);
+
+        // Find what cell the object falls into now
+        var cellCoord = m_grid.WorldToCell(transform.position);
+
+        // Snap the object to the center of the relevant cell
+        var cellCenterWorld = m_grid.GetCellCenterWorld(cellCoord);
+        transform.position = new Vector3(cellCenterWorld.x, cellCenterWorld.y, m_zPos);
     }
 }

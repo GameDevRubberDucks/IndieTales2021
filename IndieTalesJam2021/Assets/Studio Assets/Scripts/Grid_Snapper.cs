@@ -9,7 +9,7 @@ public class Grid_Snapper : MonoBehaviour
 
     //--- Private Variables ---//
     private Grid m_grid;
-    private Vector3 m_initialOffset;
+    //private Vector3 m_initialOffset;
 
 
 
@@ -18,17 +18,17 @@ public class Grid_Snapper : MonoBehaviour
     {
         // Init the private variables
         m_grid = FindObjectOfType<Grid>();
-        m_initialOffset = transform.localPosition;
+        //m_initialOffset = transform.localPosition;
     }
 
     private void LateUpdate()
     {
         // Move back to the correct position relative to the parent before snapping again
         // Prevents the object from getting stuck at a previous snap position
-        transform.localPosition = m_initialOffset;
+        //transform.localPosition = m_initialOffset;
 
         // Offset the parent's rotation so it is always facing upwards
-        transform.right = Vector3.right;
+        //transform.right = Vector3.right;
 
         // Find what cell the object falls into now
         var cellCoord = m_grid.WorldToCell(transform.position);
