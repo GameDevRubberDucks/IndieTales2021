@@ -29,6 +29,8 @@ public class Game_Manager : MonoBehaviour
     //--- Private Variables ---//
     private Queue<Game_DayDesc> m_upcomingDays;
     private Grid_ItemClearer m_gridClearer;
+    private Timeline_Animate m_timelineAnimate;
+    private Timeline_Manager m_timelineManager;
     private int m_currentDay;
 
 
@@ -37,6 +39,8 @@ public class Game_Manager : MonoBehaviour
     private void Awake()
     {
         m_gridClearer = FindObjectOfType<Grid_ItemClearer>();
+        m_timelineAnimate = FindObjectOfType<Timeline_Animate>();
+        m_timelineManager = FindObjectOfType<Timeline_Manager>();
         m_currentDay = 1;
 
         GenerateAllDays();
@@ -52,7 +56,7 @@ public class Game_Manager : MonoBehaviour
     //--- Public Methods ---//
     public void GenerateAllDays()
     {
-        m_upcomingDays = new Queue<Game_DayDesc>(m_numDaysUpcoming);
+        m_upcomingDays = new Queue<Game_DayDesc>();
 
         for (int i = 0; i < m_numDaysUpcoming; i++)
             m_upcomingDays.Enqueue(GenerateNewDay());
@@ -60,6 +64,9 @@ public class Game_Manager : MonoBehaviour
 
     public void StartNewDay()
     {
+        // Play the animation
+        m_timelineAnimate.TimelineNewDay();
+
         // Determine what the day holds
         var thisDay = m_upcomingDays.Dequeue();
         Debug.Log("New Day:\nSelling: :" + thisDay.m_sellType + "\nDeliveryCount: " + thisDay.m_deliveries.Count);
@@ -98,6 +105,9 @@ public class Game_Manager : MonoBehaviour
             // If a sell day, randomly select what item to be for
             int sellItemIdx = Random.Range(0, (int)Item_Type.Count); // TODO:: Change to the maximum selected possible item in the item code
             newDayDesc.m_sellType = (Item_Type)sellItemIdx;
+
+            // Add an icon to the timeline that matches the type to sell
+            m_timelineManager.AddNewSaleIcon(newDayDesc.m_sellType, m_numDaysUpcoming - m_upcomingDays.Count - 1);
         }
 
         // Randomly decide the number of deliveries
