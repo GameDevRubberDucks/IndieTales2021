@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    //--- Public Variables ---//
+    public Color m_interactedColor;
+    public Color m_staticColor;
+
+
+
     //--- Private Variables ---//
     private Item_Type m_itemType;
     private Item_Tile[] m_tiles;
@@ -18,5 +24,11 @@ public class Item : MonoBehaviour
         m_tiles = GetComponentsInChildren<Item_Tile>();
         foreach (var tile in m_tiles)
             tile.Init(_itemType, _tileSprite);
+    }
+
+    public void UpdateColor(bool _useInteractableColor)
+    {
+        foreach (var tile in m_tiles)
+            tile.UpdateColor(_useInteractableColor ? m_interactedColor : m_staticColor);
     }
 }

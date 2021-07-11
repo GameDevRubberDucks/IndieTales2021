@@ -23,6 +23,17 @@ public class Stockpile_Item : MonoBehaviour
 
         m_itemController = GetComponent<Item>();
         m_itemController.Init(m_itemType, m_itemSprite);
+        m_itemController.UpdateColor(false);
+    }
+
+    private void OnMouseOver()
+    {
+        m_itemController.UpdateColor(true);
+    }
+
+    private void OnMouseExit()
+    {
+        m_itemController.UpdateColor(false);
     }
 
     private void OnMouseDown()
