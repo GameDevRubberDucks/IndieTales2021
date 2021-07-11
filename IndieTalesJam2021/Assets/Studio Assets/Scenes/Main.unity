@@ -230,8 +230,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30593908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94, y: 0.94, z: 0.94}
+  m_LocalPosition: {x: 0.09, y: 0, z: 0}
+  m_LocalScale: {x: 0.93, y: 0.93, z: 0.93}
   m_Children: []
   m_Father: {fileID: 2114548927}
   m_RootOrder: 0
@@ -3067,6 +3067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5806338731252737137, guid: 118f32a0e9eb2ca4d8c67139d6709e9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5806338731539608506, guid: 118f32a0e9eb2ca4d8c67139d6709e9b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3577,7 +3581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenDist: -1.503
-  tweenDuration: 60
+  tweenDuration: 10
   clouds: {fileID: 1711886436}
 --- !u!4 &2114548927
 Transform:
