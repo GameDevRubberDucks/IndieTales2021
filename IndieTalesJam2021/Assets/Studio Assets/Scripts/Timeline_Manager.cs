@@ -27,8 +27,8 @@ public class Timeline_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            AddNewSaleIcon(Item_Type.Apples);
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //    AddNewSaleIcon(Item_Type.Apples);
     }
 
     public void AddNewSaleIcon(Item_Type _itemType, int _dayOffset = 0)

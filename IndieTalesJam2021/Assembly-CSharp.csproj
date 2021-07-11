@@ -83,6 +83,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Stockpile_Manager.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Timeline_Animate.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Stockpile_Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DOTween\DOTween.XML" />

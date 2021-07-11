@@ -23,6 +23,7 @@ public class Game_Manager : MonoBehaviour
     [Range(0, 100)] public int m_sellDayChance;
     public Vector2Int m_deliveryCountRange;
     public Text m_txtDayCount;
+    public Item_Type m_highestSpawnableItem;
 
 
 
@@ -81,7 +82,7 @@ public class Game_Manager : MonoBehaviour
         }
 
         // Drop in the deliveries
-        m_stockManager.SpawnShipment(thisDay.m_deliveries);
+        StartCoroutine(m_stockManager.SpawnShipment(thisDay.m_deliveries));
     }
     
     public void EndDay()
@@ -101,12 +102,16 @@ public class Game_Manager : MonoBehaviour
     {
         var newDayDesc = new Game_DayDesc();
 
+        int upperItemBound = (m_highestSpawnableItem == Item_Type.All || m_highestSpawnableItem == Item_Type.Count)
+                            ? (int)Item_Type.Count
+                            : (int)(m_highestSpawnableItem + 1);
+
         // Randomly choose to be a sell day or not
         int sellDayRoll = Random.Range(0, 100);
         if (sellDayRoll < m_sellDayChance)
         {
             // If a sell day, randomly select what item to be for
-            int sellItemIdx = Random.Range(0, (int)Item_Type.Count); // TODO:: Change to the maximum selected possible item in the item code
+            int sellItemIdx = Random.Range(0, upperItemBound);
             newDayDesc.m_sellType = (Item_Type)sellItemIdx;
 
             // Add an icon to the timeline that matches the type to sell
@@ -120,7 +125,7 @@ public class Game_Manager : MonoBehaviour
         // Now, randomly decide what each of the deliveries are going to be
         for (int i = 0; i < numDeliveries; i++)
         {
-            int deliveryItemIdx = Random.Range(0, (int)Item_Type.Count);
+            int deliveryItemIdx = Random.Range(0, upperItemBound);
             newDayDesc.m_deliveries.Add((Item_Type)deliveryItemIdx);
         }
 
