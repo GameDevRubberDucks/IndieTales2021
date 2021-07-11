@@ -56,7 +56,7 @@ public class Stockpile_Manager : MonoBehaviour
 
             Instantiate(spawnPiece, spawnLoc, spawnRot);
 
-            Debug.Log("New piece spawned: " + spawnPiece.name + ". Spawning at " + spawnLoc + " with rotation " + spawnRot);
+            //Debug.Log("New piece spawned: " + spawnPiece.name + ". Spawning at " + spawnLoc + " with rotation " + spawnRot);
         }
     }
 
@@ -76,11 +76,18 @@ public class Stockpile_Manager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("TriggerEntered");
+
+        if (collision.CompareTag("PhysicsObjects"))
+        { 
+            aboveLimit = true;
         
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("TriggerExited");
         if (collision.CompareTag("PhysicsObjects"))
             aboveLimit = false;
     }
