@@ -70,6 +70,8 @@ public class Game_Manager : MonoBehaviour
             // TODO: play sounds, particles, etc
             m_gridClearer.ClearItems(thisDay.m_sellType);
         }
+
+        // TODO: Drop in the deliveries
     }
     
     public void EndDay()
@@ -91,10 +93,10 @@ public class Game_Manager : MonoBehaviour
 
         // Randomly choose to be a sell day or not
         int sellDayRoll = Random.Range(0, 100);
-        if (sellDayRoll <= m_sellDayChance)
+        if (sellDayRoll < m_sellDayChance)
         {
             // If a sell day, randomly select what item to be for
-            int sellItemIdx = Random.Range(0, (int)Item_Type.Count);
+            int sellItemIdx = Random.Range(0, (int)Item_Type.Count); // TODO:: Change to the maximum selected possible item in the item code
             newDayDesc.m_sellType = (Item_Type)sellItemIdx;
         }
 
