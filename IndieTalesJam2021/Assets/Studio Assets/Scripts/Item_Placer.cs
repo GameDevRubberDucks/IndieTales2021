@@ -5,6 +5,7 @@ public class Item_Placer : MonoBehaviour
     //--- Private Variables ---//
     private Grid_Validator[] m_validators;
     private GameObject m_siblingTetronimo;
+    private Item m_itemComp;
 
 
 
@@ -13,6 +14,7 @@ public class Item_Placer : MonoBehaviour
     {
         // Init the private variables
         m_validators = GetComponentsInChildren<Grid_Validator>();
+        m_itemComp = GetComponent<Item>();
     }
 
     private void Update()
@@ -33,6 +35,9 @@ public class Item_Placer : MonoBehaviour
         // Start by checking if all of the child tiles are valid
         if (AreAllTilesValid())
         {
+            // Change the colour of the item as feedback
+            m_itemComp.UpdateColor(false);
+
             // Place the tiles into the grid
             PlaceTilesIntoGrid();
 

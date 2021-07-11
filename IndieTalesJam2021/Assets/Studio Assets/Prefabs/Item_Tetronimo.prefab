@@ -83,6 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba20685c8d57a1409aa3808bc5cb8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_interactedColor: {r: 1, g: 1, b: 1, a: 1}
+  m_staticColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
 --- !u!114 &468519998180696244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +275,10 @@ PrefabInstance:
     - target: {fileID: 7579353488881663609, guid: 3fbaa3a6cbf409c4eb309ce40d0c7552, type: 3}
       propertyPath: m_Name
       value: Item_Tile (Right, Bottom)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579353488881663611, guid: 3fbaa3a6cbf409c4eb309ce40d0c7552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fbaa3a6cbf409c4eb309ce40d0c7552, type: 3}

@@ -5,6 +5,7 @@ public class Item_Tile : MonoBehaviour
     //--- Private Variables ---//
     private Item_Type m_itemType;
     private Grid_Cell m_attachedCell;
+    private SpriteRenderer m_spriteRend;
 
 
 
@@ -13,7 +14,13 @@ public class Item_Tile : MonoBehaviour
     {
         // Store the new data
         m_itemType = _itemType;
-        GetComponent<SpriteRenderer>().sprite = _sprite;
+        m_spriteRend = GetComponent<SpriteRenderer>();
+        m_spriteRend.sprite = _sprite;
+    }
+
+    public void UpdateColor(Color _color)
+    {
+        m_spriteRend.color = _color;
     }
 
 
