@@ -28,7 +28,7 @@ public class Background_Animate : MonoBehaviour
     {
         //Tween Position of timeline
         clouds.transform.DOLocalMoveX(tweenDist, tweenDuration, false)
-            .OnComplete(ResetPosition).OnComplete(AnimateClouds);
+            .OnComplete(ResetPosition).SetLoops(-1).SetEase(Ease.Linear);
 
     }
 
