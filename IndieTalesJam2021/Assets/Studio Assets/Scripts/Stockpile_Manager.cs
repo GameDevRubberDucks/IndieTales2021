@@ -40,6 +40,12 @@ public class Stockpile_Manager : MonoBehaviour
 
     public IEnumerator SpawnShipment(List<Item_Type> _itemsToSpawn)
     {
+        if (aboveLimit)
+        {
+            Debug.Log("<color=red>Too many shipments - fail.</color>");
+            // TODO: Jump to end screen or something
+        }
+
         //int numToSpawn = Random.Range(1, spawnMax + 1);
         int numToSpawn = _itemsToSpawn.Count;
 

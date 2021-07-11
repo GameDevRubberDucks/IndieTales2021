@@ -72,7 +72,6 @@ public class Game_Manager : MonoBehaviour
 
         // Determine what the day holds
         var thisDay = m_upcomingDays.Dequeue();
-        Debug.Log("New Day:\nSelling: :" + thisDay.m_sellType + "\nDeliveryCount: " + thisDay.m_deliveries.Count);
 
         // If the day is a sell day, trigger a selling of the specific item type
         if (thisDay.m_sellType != Item_Type.None)

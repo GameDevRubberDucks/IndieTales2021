@@ -1925,7 +1925,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1212352101}
-  - component: {fileID: 1212352102}
   m_Layer: 0
   m_Name: Stockpile
   m_TagString: Untagged
@@ -1950,37 +1949,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1212352102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212352100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6439af61723fffc48a3867b4137d01fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tetrominoes:
-  - {fileID: 1206062450893452835, guid: 24dc0014c4be4144b8510526ad6f8a3d, type: 3}
-  - {fileID: 7037291854570119630, guid: 6dc6f5f34a932334d8314ad976016fac, type: 3}
-  - {fileID: 4545448337025278860, guid: 2affe6749d147a341b06626197cc625a, type: 3}
-  - {fileID: 8183287115973485253, guid: 73743cbc55536a6439a0c2083321fac9, type: 3}
-  - {fileID: 8430392302547463066, guid: 648a0be09aa48ea4abfbe2074d72256c, type: 3}
-  - {fileID: 5095686979148159840, guid: ee5871bb42a697d48a6e2b9a96615376, type: 3}
-  m_itemSprites:
-  - {fileID: 21300000, guid: 9573423b6ab52f24dbf2db54b1b6e14f, type: 3}
-  - {fileID: 21300000, guid: 6bdb3b00cba87d64ead2fc5d85e47e31, type: 3}
-  - {fileID: 21300000, guid: ac585491134b5f04fb05df91d3d59628, type: 3}
-  - {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
-  - {fileID: 21300000, guid: 97b40ffdd52711d4ea64fb5517cd7727, type: 3}
-  spawnMax: 3
-  ceilingCollider: {fileID: 1312960374}
-  spawnPoint: {fileID: 25606092}
-  spawnRange: 2
-  aboveLimit: 0
-  m_spawnDelay: 0.5
 --- !u!1 &1251837116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2037,7 @@ GameObject:
   - component: {fileID: 1312960376}
   - component: {fileID: 1312960375}
   - component: {fileID: 1312960374}
-  - component: {fileID: 1312960377}
+  - component: {fileID: 1312960378}
   m_Layer: 0
   m_Name: Upper Limit Collider
   m_TagString: Untagged
@@ -2163,33 +2131,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312960373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1849, y: 4.14, z: 0}
+  m_LocalPosition: {x: -0.1849, y: 4.36, z: 0}
   m_LocalScale: {x: 7.28601, y: 2.1967, z: 1}
   m_Children: []
   m_Father: {fileID: 1212352101}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1312960377
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &1312960378
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312960373}
-  m_BodyType: 2
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6439af61723fffc48a3867b4137d01fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tetrominoes:
+  - {fileID: 1206062450893452835, guid: 24dc0014c4be4144b8510526ad6f8a3d, type: 3}
+  - {fileID: 7037291854570119630, guid: 6dc6f5f34a932334d8314ad976016fac, type: 3}
+  - {fileID: 4545448337025278860, guid: 2affe6749d147a341b06626197cc625a, type: 3}
+  - {fileID: 8183287115973485253, guid: 73743cbc55536a6439a0c2083321fac9, type: 3}
+  - {fileID: 8430392302547463066, guid: 648a0be09aa48ea4abfbe2074d72256c, type: 3}
+  - {fileID: 5095686979148159840, guid: ee5871bb42a697d48a6e2b9a96615376, type: 3}
+  m_itemSprites:
+  - {fileID: 21300000, guid: 9573423b6ab52f24dbf2db54b1b6e14f, type: 3}
+  - {fileID: 21300000, guid: 6bdb3b00cba87d64ead2fc5d85e47e31, type: 3}
+  - {fileID: 21300000, guid: ac585491134b5f04fb05df91d3d59628, type: 3}
+  - {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
+  - {fileID: 21300000, guid: 97b40ffdd52711d4ea64fb5517cd7727, type: 3}
+  spawnMax: 3
+  ceilingCollider: {fileID: 1312960374}
+  spawnPoint: {fileID: 25606092}
+  spawnRange: 2
+  aboveLimit: 0
+  m_spawnDelay: 0.5
 --- !u!1001 &1338634721
 PrefabInstance:
   m_ObjectHideFlags: 0
