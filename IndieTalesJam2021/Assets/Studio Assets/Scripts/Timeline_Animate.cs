@@ -24,8 +24,8 @@ public class Timeline_Animate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            TimelineNewDay();
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    TimelineNewDay();
     }
 
     public void AddSaleIconToList(GameObject saleIcon)

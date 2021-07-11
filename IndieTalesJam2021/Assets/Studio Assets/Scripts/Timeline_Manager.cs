@@ -19,7 +19,7 @@ public class Timeline_Manager : MonoBehaviour
     //private int fruit;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         timelineAnimator = FindObjectOfType<Timeline_Animate>();
     }
@@ -27,29 +27,33 @@ public class Timeline_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            AddNewSaleIcon();
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //    AddNewSaleIcon(Item_Type.Apples);
     }
 
-    public void AddNewSaleIcon()
+    public void AddNewSaleIcon(Item_Type _itemType, int _dayOffset = 0)
     {
         //Create new icon
         GameObject saleIconObject = Instantiate(saleIcon);
 
         //set proper colour of sale icon
-        SetSaleIcon(saleIconObject);
+        SetSaleIcon(saleIconObject, _itemType);
 
         //Properly set transform and parent of new icon
         saleIconObject.transform.SetParent(timelineMask.transform);
         saleIconObject.transform.localPosition = iconSpawnPos.localPosition;
 
+        // Move the icon over on the timeline to match a specific day if needed
+        saleIconObject.transform.localPosition += (saleIconObject.transform.right * timelineAnimator.tweenDist * _dayOffset);
+
         //Add new icon to list of animated icons
         timelineAnimator.AddSaleIconToList(saleIconObject);
     }
 
-    private void SetSaleIcon(GameObject icon)
+    private void SetSaleIcon(GameObject icon, Item_Type _itemType)
     {
-        int fruit = Random.Range(0, 4);
+        //int fruit = Random.Range(0, 4);
+        int fruit = (int)_itemType;
 
         //Set which sale icon to use.
         icon.GetComponent<Image>().sprite = iconSprites[fruit];

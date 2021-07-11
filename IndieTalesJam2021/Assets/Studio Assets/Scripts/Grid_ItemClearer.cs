@@ -30,16 +30,16 @@ public class Grid_ItemClearer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            ClearItems(Item_Type.Apples);
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            ClearItems(Item_Type.Bananas);
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            ClearItems(Item_Type.Oranges);
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-            ClearItems(Item_Type.Grapes);
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-            ClearItems(Item_Type.Limes);
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //    ClearItems(Item_Type.Apples);
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //    ClearItems(Item_Type.Bananas);
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    ClearItems(Item_Type.Oranges);
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //    ClearItems(Item_Type.Grapes);
+        //else if (Input.GetKeyDown(KeyCode.Alpha5))
+        //    ClearItems(Item_Type.Limes);
     }
 
 

@@ -4,6 +4,7 @@ public class Item_Placer : MonoBehaviour
 {
     //--- Private Variables ---//
     private Grid_Validator[] m_validators;
+    private GameObject m_siblingTetronimo;
 
 
 
@@ -17,8 +18,11 @@ public class Item_Placer : MonoBehaviour
     private void Update()
     {
         // Try to place the item when pressing the mouse button
+        // Or, cancel by pressing the right mouse button
         if (Input.GetMouseButtonDown(0))
             PlaceTiles();
+        else if (Input.GetMouseButton(1))
+            Destroy(this.gameObject);
     }
 
 
@@ -39,6 +43,14 @@ public class Item_Placer : MonoBehaviour
 
 
 
+    //--- Setters ---//
+    public void SetSibling(GameObject _sibling)
+    {
+        m_siblingTetronimo = _sibling;
+    }
+
+
+
     //--- Private Utility Methods ---//
     private bool AreAllTilesValid()
     {
@@ -55,5 +67,7 @@ public class Item_Placer : MonoBehaviour
     {
         foreach(var validator in m_validators)
             validator.PlaceIntoGrid();
+
+        Destroy(m_siblingTetronimo);
     }
 }
