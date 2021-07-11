@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class Game_Manager : MonoBehaviour
     public int m_numDaysUpcoming;
     [Range(0, 100)] public int m_sellDayChance;
     public Vector2Int m_deliveryCountRange;
-    public Text m_txtDayCount;
+    public TextMeshProUGUI m_txtDayCount;
     public Item_Type m_highestSpawnableItem;
 
 
@@ -67,6 +67,9 @@ public class Game_Manager : MonoBehaviour
 
     public void StartNewDay()
     {
+        // Update the UI
+        m_txtDayCount.text = "DAY\n" + m_currentDay.ToString();
+
         // Play the animation
         m_timelineAnimate.TimelineNewDay();
 
@@ -91,7 +94,6 @@ public class Game_Manager : MonoBehaviour
 
         // Move to the next
         m_currentDay++;
-        m_txtDayCount.text = "Day: " + m_currentDay.ToString();
 
         // Start the next day
         StartNewDay();
