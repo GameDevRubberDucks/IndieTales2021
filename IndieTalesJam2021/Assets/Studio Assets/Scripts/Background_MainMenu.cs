@@ -42,6 +42,7 @@ public class Background_MainMenu : MonoBehaviour
 
             var itemType = (Item_Type)Random.Range(0, (int)Item_Type.Count);
             spawnedObject.GetComponent<Item>().Init(itemType, m_itemSprites[(int)itemType]);
+            Destroy(spawnedObject.GetComponent<Stockpile_Item>());
 
 
             // If not at the end of the final spawning, wait a second before spawning the next one

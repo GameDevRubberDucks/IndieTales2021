@@ -24,7 +24,7 @@ public class Game_Manager : MonoBehaviour
     [Range(0, 100)] public int m_sellDayChance;
     public Vector2Int m_deliveryCountRange;
     public TextMeshProUGUI m_txtDayCount;
-    public Item_Type m_highestSpawnableItem;
+    public static Item_Type m_highestSpawnableItem;
 
 
 
