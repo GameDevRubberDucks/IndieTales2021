@@ -34,6 +34,7 @@ public class Tile_VFX : MonoBehaviour
                 m_vfxSold.Play();
                 m_vfxSold.transform.parent = null;
                 m_vfxSold.transform.localScale = Vector3.one;
+                m_vfxSold.transform.right = Vector3.right;
                 Destroy(m_vfxSold.gameObject, 1.5f);
                 break;
 
