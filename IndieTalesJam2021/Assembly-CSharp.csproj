@@ -90,6 +90,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Util\Util_SceneLoader.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Game_SaleTracker.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\EndScreen_ItemSpawner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\EndScreen_Scale.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

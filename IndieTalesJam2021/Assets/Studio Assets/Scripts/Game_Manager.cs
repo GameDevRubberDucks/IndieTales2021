@@ -138,6 +138,7 @@ public class Game_Manager : MonoBehaviour
 
     public void EndGame()
     {
+        FindObjectOfType<Game_SaleTracker>().SetFinalScore(FindObjectOfType<Game_Score>().GetScore());
         GetComponent<Util_SceneLoader>().LoadSceneByName("EndScreen");
     }
 }

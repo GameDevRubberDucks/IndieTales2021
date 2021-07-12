@@ -29,6 +29,12 @@ public class Stockpile_Item : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Destroy any existing items being placed on the main board
+        var existingItem = FindObjectOfType<Item_Placer>();
+        if (existingItem != null)
+            Destroy(existingItem.gameObject);
+
+        // Spawn a new item to be placed on the main board
         var sibling = Instantiate(m_siblingTetronimo);
         sibling.GetComponent<Item>().Init(m_itemType, m_itemSprite);
         sibling.GetComponent<Item_Placer>().SetSibling(this);
@@ -49,7 +55,7 @@ public class Stockpile_Item : MonoBehaviour
 
     public void RemoveFromStockpile()
     {
-        FindObjectOfType<Game_SaleTracker>().AddSale(this.m_itemType, this.m_itemSprite, m_itemController.m_itemShape);
+        //FindObjectOfType<Game_SaleTracker>().AddSale(this.m_itemType, this.m_itemSprite, m_itemController.m_itemShape);
         Destroy(this.gameObject);
     }
 }

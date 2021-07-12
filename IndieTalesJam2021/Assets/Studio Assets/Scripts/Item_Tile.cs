@@ -35,4 +35,9 @@ public class Item_Tile : MonoBehaviour
     {
         return m_itemType;
     }
+
+    public Sprite GetSprite()
+    {
+        return m_spriteRend.sprite;
+    }
 }
