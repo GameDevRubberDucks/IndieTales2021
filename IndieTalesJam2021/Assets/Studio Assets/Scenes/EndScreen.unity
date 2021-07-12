@@ -1369,8 +1369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d35d3978f85e8e49889c6276c294094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenDist: -2.79
-  tweenDuration: 10
+  tweenDist: 1.71
+  tweenDuration: 60
   clouds: {fileID: 1970912763}
 --- !u!4 &1649547173
 Transform:
@@ -1533,7 +1533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970912763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.369999, y: 0, z: 2.7}
+  m_LocalPosition: {x: 0.384, y: 0, z: 2.7}
   m_LocalScale: {x: 0.9937997, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649547173}
