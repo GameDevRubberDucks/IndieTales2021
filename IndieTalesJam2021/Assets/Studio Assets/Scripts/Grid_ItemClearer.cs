@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class Grid_ItemClearer : MonoBehaviour
 {
@@ -124,7 +125,8 @@ public class Grid_ItemClearer : MonoBehaviour
             m_saleTracker.AddSale(cell.AttachedItemTile.GetItemType(), cell.AttachedItemTile.GetSprite());
 
             // TODO: play particles
-            Destroy(cell.AttachedItemTile.gameObject);
+            //Destroy(cell.AttachedItemTile.gameObject);
+            cell.AttachedItemTile.GetComponent<Item_ExitAnimator>().StartAnimation();
             cell.AttachedItemTile = null;
         }
 

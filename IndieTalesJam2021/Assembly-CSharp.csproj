@@ -91,6 +91,8 @@
     <Compile Include="Assets\Studio Assets\Scripts\EndScreen_Scale.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Audio_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Item_ExitAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
