@@ -89,6 +89,12 @@ public class Game_Manager : MonoBehaviour
 
         // Drop in the deliveries
         StartCoroutine(m_stockManager.SpawnShipment(thisDay.m_deliveries));
+
+        // Disable the day buttons for a while to prevent the player from accidentally ending the game early
+        // Then reactivate them after a few seconds
+        GameObject.FindGameObjectWithTag("MoneyButton").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        GameObject.FindGameObjectWithTag("DayButton").GetComponentInChildren<UnityEngine.UI.Button>().interactable = false;
+        Invoke("ReactivateButtons", 5.0f);
     }
     
     public void EndDay()
@@ -103,6 +109,12 @@ public class Game_Manager : MonoBehaviour
 
         // Start the next day
         StartNewDay();
+    }
+
+    public void ReactivateButtons()
+    {
+        GameObject.FindGameObjectWithTag("MoneyButton").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        GameObject.FindGameObjectWithTag("DayButton").GetComponentInChildren<UnityEngine.UI.Button>().interactable = true;
     }
 
     public Game_DayDesc GenerateNewDay()
