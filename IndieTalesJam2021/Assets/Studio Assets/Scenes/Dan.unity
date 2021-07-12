@@ -1190,6 +1190,30 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_highestSpawnableItem
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_itemSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6bdb3b00cba87d64ead2fc5d85e47e31, type: 3}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_itemSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 97b40ffdd52711d4ea64fb5517cd7727, type: 3}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_itemSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9573423b6ab52f24dbf2db54b1b6e14f, type: 3}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_itemSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
+      propertyPath: m_itemSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: ac585491134b5f04fb05df91d3d59628, type: 3}
+    - target: {fileID: 309419962672763698, guid: 450eb09280d88804d948884a87ced8f4, type: 3}
       propertyPath: m_itemTetronimoPrefabs.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -3015,11 +3039,11 @@ MonoBehaviour:
   iconSpawnPos: {fileID: 125274819}
   timelineMask: {fileID: 952732651}
   iconSprites:
-  - {fileID: 21300000, guid: 4648f254f479d044bb93ee15dc3448be, type: 3}
   - {fileID: 21300000, guid: 42c73203236173843910f49713056386, type: 3}
-  - {fileID: 21300000, guid: 87728d4f72f804240b82a3a224404347, type: 3}
-  - {fileID: 21300000, guid: 69bdc5ccfb6c3e44394abbf67c2132e3, type: 3}
   - {fileID: 21300000, guid: 7a421f6a3670b334e9a7253b229a6558, type: 3}
+  - {fileID: 21300000, guid: 4648f254f479d044bb93ee15dc3448be, type: 3}
+  - {fileID: 21300000, guid: 69bdc5ccfb6c3e44394abbf67c2132e3, type: 3}
+  - {fileID: 21300000, guid: 87728d4f72f804240b82a3a224404347, type: 3}
 --- !u!1 &1264004988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5806338731539608508, guid: 118f32a0e9eb2ca4d8c67139d6709e9b, type: 3}
@@ -3169,11 +3193,11 @@ MonoBehaviour:
   - {fileID: 8430392302547463066, guid: 648a0be09aa48ea4abfbe2074d72256c, type: 3}
   - {fileID: 5095686979148159840, guid: ee5871bb42a697d48a6e2b9a96615376, type: 3}
   m_itemSprites:
-  - {fileID: 21300000, guid: 9573423b6ab52f24dbf2db54b1b6e14f, type: 3}
   - {fileID: 21300000, guid: 6bdb3b00cba87d64ead2fc5d85e47e31, type: 3}
-  - {fileID: 21300000, guid: ac585491134b5f04fb05df91d3d59628, type: 3}
-  - {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
   - {fileID: 21300000, guid: 97b40ffdd52711d4ea64fb5517cd7727, type: 3}
+  - {fileID: 21300000, guid: 9573423b6ab52f24dbf2db54b1b6e14f, type: 3}
+  - {fileID: 21300000, guid: b5134ad105d9c3140885ef4f10b0a853, type: 3}
+  - {fileID: 21300000, guid: ac585491134b5f04fb05df91d3d59628, type: 3}
   spawnMax: 3
   ceilingCollider: {fileID: 1312960374}
   spawnPoint: {fileID: 25606092}

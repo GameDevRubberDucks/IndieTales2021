@@ -2,11 +2,11 @@
 
 public enum Item_Type
 {
-    Apples,
     Bananas,
-    Oranges,
-    Grapes,
     Limes,
+    Apples,
+    Grapes,
+    Oranges,
 
     Count,
     All,

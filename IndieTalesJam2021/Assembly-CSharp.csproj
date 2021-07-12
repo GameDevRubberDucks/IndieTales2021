@@ -63,10 +63,12 @@
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_MouseSnapper.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Game_SaleTracker.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Background_Animate.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Stockpile_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_Tile.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\EndScreen_ItemSpawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Snapper.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Stockpile_Item.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Game_Manager.cs" />
@@ -82,15 +84,13 @@
     <Compile Include="Assets\Studio Assets\Scripts\Item_Placer.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Grid_Manager.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Util\Util_SceneLoader.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Util\Util_ClearChildren.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Timeline_Manager.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\EndScreen_Scale.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\Util\Util_SceneLoader.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\Game_SaleTracker.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\EndScreen_ItemSpawner.cs" />
-    <Compile Include="Assets\Studio Assets\Scripts\EndScreen_Scale.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
