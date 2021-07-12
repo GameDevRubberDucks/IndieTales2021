@@ -5,6 +5,7 @@ public class Stockpile_Item : MonoBehaviour
 {
     //--- Public Variables ---//
     public GameObject m_siblingTetronimo;
+    public GameObject m_thisPhysicsTetronimoPrefab;
 
 
 
@@ -15,17 +16,7 @@ public class Stockpile_Item : MonoBehaviour
 
 
 
-    //--- Public Methods ---//
-    public void Init(Item_Type _type, Sprite _itemSprite)
-    {
-        m_itemType = _type;
-        m_itemSprite = _itemSprite;
-
-        m_itemController = GetComponent<Item>();
-        m_itemController.Init(m_itemType, m_itemSprite);
-        m_itemController.UpdateColor(false);
-    }
-
+    //--- Unity Methods ---//
     private void OnMouseOver()
     {
         m_itemController.UpdateColor(true);
@@ -40,6 +31,25 @@ public class Stockpile_Item : MonoBehaviour
     {
         var sibling = Instantiate(m_siblingTetronimo);
         sibling.GetComponent<Item>().Init(m_itemType, m_itemSprite);
-        sibling.GetComponent<Item_Placer>().SetSibling(this.gameObject);
+        sibling.GetComponent<Item_Placer>().SetSibling(this);
+    }
+
+
+
+    //--- Public Methods ---//
+    public void Init(Item_Type _type, Sprite _itemSprite)
+    {
+        m_itemType = _type;
+        m_itemSprite = _itemSprite;
+
+        m_itemController = GetComponent<Item>();
+        m_itemController.Init(m_itemType, m_itemSprite);
+        m_itemController.UpdateColor(false);
+    }
+
+    public void RemoveFromStockpile()
+    {
+        FindObjectOfType<Game_SaleTracker>().AddSale(this.m_itemType, this.m_itemSprite, m_itemController.m_itemShape);
+        Destroy(this.gameObject);
     }
 }

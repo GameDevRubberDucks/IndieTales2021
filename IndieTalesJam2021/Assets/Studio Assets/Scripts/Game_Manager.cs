@@ -33,6 +33,7 @@ public class Game_Manager : MonoBehaviour
     private Timeline_Animate m_timelineAnimate;
     private Timeline_Manager m_timelineManager;
     private Stockpile_Manager m_stockManager;
+    private Game_SaleTracker m_saleTracker;
     private int m_currentDay;
 
 
@@ -44,6 +45,7 @@ public class Game_Manager : MonoBehaviour
         m_timelineAnimate = FindObjectOfType<Timeline_Animate>();
         m_timelineManager = FindObjectOfType<Timeline_Manager>();
         m_stockManager = FindObjectOfType<Stockpile_Manager>();
+        m_saleTracker = FindObjectOfType<Game_SaleTracker>();
         m_currentDay = 1;
 
         GenerateAllDays();
@@ -51,6 +53,7 @@ public class Game_Manager : MonoBehaviour
 
     private void Start()
     {
+        m_saleTracker.ResetSaleList();
         StartNewDay();
     }
 
@@ -131,5 +134,10 @@ public class Game_Manager : MonoBehaviour
         }
 
         return newDayDesc;
+    }
+
+    public void EndGame()
+    {
+        GetComponent<Util_SceneLoader>().LoadSceneByName("EndScreen");
     }
 }

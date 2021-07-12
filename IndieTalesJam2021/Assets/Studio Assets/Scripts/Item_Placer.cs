@@ -4,7 +4,7 @@ public class Item_Placer : MonoBehaviour
 {
     //--- Private Variables ---//
     private Grid_Validator[] m_validators;
-    private GameObject m_siblingTetronimo;
+    private Stockpile_Item m_siblingTetronimo;
     private Item m_itemComp;
 
 
@@ -49,7 +49,7 @@ public class Item_Placer : MonoBehaviour
 
 
     //--- Setters ---//
-    public void SetSibling(GameObject _sibling)
+    public void SetSibling(Stockpile_Item _sibling)
     {
         m_siblingTetronimo = _sibling;
     }
@@ -73,6 +73,6 @@ public class Item_Placer : MonoBehaviour
         foreach(var validator in m_validators)
             validator.PlaceIntoGrid();
 
-        Destroy(m_siblingTetronimo);
+        m_siblingTetronimo.RemoveFromStockpile();
     }
 }
