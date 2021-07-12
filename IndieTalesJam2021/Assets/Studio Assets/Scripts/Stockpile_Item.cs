@@ -40,6 +40,11 @@ public class Stockpile_Item : MonoBehaviour
         sibling.GetComponent<Item_Placer>().SetSibling(this);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collided");
+    }
+
 
 
     //--- Public Methods ---//

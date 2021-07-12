@@ -1,13 +1,5 @@
 using UnityEngine;
 
-public enum Audio_SFX
-{
-    Item_Landing,
-    Item_Sell,
-    Item_Placed,
-    Game_Over
-}  
-
 public class Audio_Manager : MonoBehaviour
 {
     //--- Public Variables ---//
@@ -16,7 +8,10 @@ public class Audio_Manager : MonoBehaviour
 
     [Header("SFX")]
     public AudioSource m_sfxSource;
-    public AudioClip[] m_sfxClips;
+    public AudioClip[] m_collisionSounds;
+    public int m_collisionSoundChance;
+    public AudioClip m_placementSound;
+    public AudioClip m_moneySound;
 
 
 
@@ -49,8 +44,23 @@ public class Audio_Manager : MonoBehaviour
 
 
     //--- Public Methods ---//
-    public void PlayAudio(Audio_SFX _sfx)
+    public void PlayCollisionSound()
     {
-        m_sfxSource.PlayOneShot(m_sfxClips[(int)_sfx]);
+        int collisionSoundRoll = Random.Range(0, 100);
+        if (collisionSoundRoll < m_collisionSoundChance)
+        {
+            int collisionSFXIdx = Random.Range(0, m_collisionSounds.Length);
+            m_sfxSource.PlayOneShot(m_collisionSounds[collisionSFXIdx], 0.25f);
+        }
+    }
+
+    public void PlayPlacementSound()
+    {
+        m_sfxSource.PlayOneShot(m_placementSound, 1.0f);
+    }
+
+    public void PlayMoneySound()
+    {
+        m_sfxSource.PlayOneShot(m_moneySound, 0.6f);
     }
 }

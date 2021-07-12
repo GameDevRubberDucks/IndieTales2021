@@ -35,6 +35,8 @@ public class Item_Placer : MonoBehaviour
         // Start by checking if all of the child tiles are valid
         if (AreAllTilesValid())
         {
+            FindObjectOfType<Audio_Manager>().PlayPlacementSound();
+
             // Change the colour of the item as feedback
             m_itemComp.UpdateColor(false);
 

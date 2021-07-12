@@ -47,7 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_musicSource: {fileID: 4462342500599810433}
   m_sfxSource: {fileID: 4462342500599810434}
-  m_sfxClips: []
+  m_collisionSounds:
+  - {fileID: 8300000, guid: 133c53865df965d428c75c97fd48218c, type: 3}
+  - {fileID: 8300000, guid: a36ab0a8f71f6134fbeeeadc634aec2b, type: 3}
+  - {fileID: 8300000, guid: b1c4163137a3a2840830d336698a19c5, type: 3}
+  m_collisionSoundChance: 15
+  m_placementSound: {fileID: 8300000, guid: 02b2e40f8fecd2249beadbc884279036, type: 3}
+  m_moneySound: {fileID: 8300000, guid: fb07d5eccf1012a49a5c7ab4bad58daa, type: 3}
 --- !u!82 &4462342500599810433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,11 +64,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 661bda2754bf2754285d9965297fa8fd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

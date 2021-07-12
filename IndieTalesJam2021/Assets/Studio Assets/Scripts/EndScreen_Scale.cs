@@ -40,6 +40,9 @@ public class EndScreen_Scale : MonoBehaviour
             float lerpT = Mathf.Clamp(m_scoreAnimTimeSoFar / m_scoreAnimDuration, 0.0f, 1.0f);
             float lerpedScore = Mathf.Lerp(0.0f, m_finalScore, lerpT);
             m_scoreText.text = "$ " + lerpedScore.ToString("F0");
+
+            if (lerpT == 1.0f)
+                FindObjectOfType<Audio_Manager>().PlayMoneySound();
         }
     }
 

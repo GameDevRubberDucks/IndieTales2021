@@ -132,6 +132,8 @@ public class Grid_ItemClearer : MonoBehaviour
 
         // Finish by clearing the island list now
         _islandTiles.Clear();
+
+        FindObjectOfType<Audio_Manager>().PlayMoneySound();
     }
 
     //private void SearchForNeighbours(Grid_Cell _cell, Item_Type _type, Vector2Int _coord, SearchLists _lists)

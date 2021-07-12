@@ -95,6 +95,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Item_Spawner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Tile_VFX.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\StockpileItem_Collision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
