@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321535685828583060, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
+      propertyPath: m_itemShape
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2447913294797093536, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5258050140021609158, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_Name
-      value: Item_Tetronimo_TBlock
+      value: Item_Tetronimo_TBlock Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8470777694506515823, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_IsActive

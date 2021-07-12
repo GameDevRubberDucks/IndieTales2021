@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_siblingTetronimo
       value: 
       objectReference: {fileID: 8814785400848136565, guid: e20161caafc798d41be210d1fc6c8f40, type: 3}
+    - target: {fileID: 520126266951208601, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
+      propertyPath: m_thisPhysicsTetronimoPrefab
+      value: 
+      objectReference: {fileID: 4545448337025278860}
     - target: {fileID: 1163639260313061227, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -199,6 +203,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4993139262941239483, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
+      propertyPath: m_itemShape
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6472993176396450698, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
       propertyPath: m_Positions.Array.size
       value: 5
@@ -253,6 +261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
+--- !u!1 &4545448337025278860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2298068080390427881, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}
+  m_PrefabInstance: {fileID: 2373623023327377253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &5114303950655082948 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7352519780558022305, guid: 79d87b94aa7913043be4a1149da9c889, type: 3}

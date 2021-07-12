@@ -38,4 +38,9 @@ public class Game_Score : MonoBehaviour
         m_score += scoreIncrease;
         m_txtScore.text = "$ " + m_score.ToString("F0");
     }
+    
+    public float GetScore()
+    {
+        return m_score;
+    }
 }

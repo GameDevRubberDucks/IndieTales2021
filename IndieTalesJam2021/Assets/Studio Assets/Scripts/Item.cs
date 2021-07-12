@@ -1,10 +1,24 @@
 using UnityEngine;
 
+public enum Item_Shape
+{
+    H,
+    J,
+    L,
+    Line,
+    Plus,
+    Single,
+    T,
+
+    Count
+}
+
 public class Item : MonoBehaviour
 {
     //--- Public Variables ---//
     public Color m_interactedColor;
     public Color m_staticColor;
+    public Item_Shape m_itemShape;
 
 
 

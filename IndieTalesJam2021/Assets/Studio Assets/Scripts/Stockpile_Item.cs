@@ -5,6 +5,7 @@ public class Stockpile_Item : MonoBehaviour
 {
     //--- Public Variables ---//
     public GameObject m_siblingTetronimo;
+    public GameObject m_thisPhysicsTetronimoPrefab;
 
 
 
@@ -12,6 +13,32 @@ public class Stockpile_Item : MonoBehaviour
     private Item_Type m_itemType;
     private Sprite m_itemSprite;
     private Item m_itemController;
+
+
+
+    //--- Unity Methods ---//
+    private void OnMouseOver()
+    {
+        m_itemController.UpdateColor(true);
+    }
+
+    private void OnMouseExit()
+    {
+        m_itemController.UpdateColor(false);
+    }
+
+    private void OnMouseDown()
+    {
+        // Destroy any existing items being placed on the main board
+        var existingItem = FindObjectOfType<Item_Placer>();
+        if (existingItem != null)
+            Destroy(existingItem.gameObject);
+
+        // Spawn a new item to be placed on the main board
+        var sibling = Instantiate(m_siblingTetronimo);
+        sibling.GetComponent<Item>().Init(m_itemType, m_itemSprite);
+        sibling.GetComponent<Item_Placer>().SetSibling(this);
+    }
 
 
 
@@ -26,20 +53,13 @@ public class Stockpile_Item : MonoBehaviour
         m_itemController.UpdateColor(false);
     }
 
-    private void OnMouseOver()
+    public void RemoveFromStockpile()
     {
-        m_itemController.UpdateColor(true);
-    }
+        //FindObjectOfType<Game_SaleTracker>().AddSale(this.m_itemType, this.m_itemSprite, m_itemController.m_itemShape);
+        var fxObjs = GetComponentsInChildren<Tile_VFX>();
+        foreach (var fx in fxObjs)
+            fx.PlayFX(Tile_VFXType.Stockpile_Removal);
 
-    private void OnMouseExit()
-    {
-        m_itemController.UpdateColor(false);
-    }
-
-    private void OnMouseDown()
-    {
-        var sibling = Instantiate(m_siblingTetronimo);
-        sibling.GetComponent<Item>().Init(m_itemType, m_itemSprite);
-        sibling.GetComponent<Item_Placer>().SetSibling(this.gameObject);
+        Destroy(this.gameObject);
     }
 }

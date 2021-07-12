@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class Grid_ItemClearer : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class Grid_ItemClearer : MonoBehaviour
         public List<Grid_Cell> m_allIslandCells = new List<Grid_Cell>();
     }
 
+
+
     //--- Private Variables ---//
     private Grid_Manager m_gridManager;
     private Game_Score m_gameScore;
+    private Game_SaleTracker m_saleTracker;
     private static Dictionary<int, Vector2Int> m_directions = new Dictionary<int, Vector2Int>{{0, Vector2Int.up},
                                                                                             {1, Vector2Int.right},
                                                                                             {2, Vector2Int.down},
@@ -26,6 +30,7 @@ public class Grid_ItemClearer : MonoBehaviour
         // Init the private variables
         m_gridManager = GetComponent<Grid_Manager>();
         m_gameScore = FindObjectOfType<Game_Score>();
+        m_saleTracker = FindObjectOfType<Game_SaleTracker>();
     }
 
     private void Update()
@@ -117,8 +122,11 @@ public class Grid_ItemClearer : MonoBehaviour
         // Detach all of the tiles from the grid and then destroy them
         foreach (var cell in _islandTiles)
         {
+            m_saleTracker.AddSale(cell.AttachedItemTile.GetItemType(), cell.AttachedItemTile.GetSprite());
+
             // TODO: play particles
-            Destroy(cell.AttachedItemTile.gameObject);
+            //Destroy(cell.AttachedItemTile.gameObject);
+            cell.AttachedItemTile.GetComponent<Item_ExitAnimator>().StartAnimation();
             cell.AttachedItemTile = null;
         }
 

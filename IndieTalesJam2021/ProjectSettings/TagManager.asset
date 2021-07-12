@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PhysicsObjects
+  - ExitPoint
+  - MoneyButton
+  - MoneyFX
+  - DayButton
   layers:
   - Default
   - TransparentFX

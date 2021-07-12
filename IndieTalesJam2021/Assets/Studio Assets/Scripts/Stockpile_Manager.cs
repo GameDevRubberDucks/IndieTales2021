@@ -13,10 +13,16 @@ public class Stockpile_Manager : MonoBehaviour
     //Private Variables
     [SerializeField] private BoxCollider2D ceilingCollider;
     [SerializeField] private GameObject spawnPoint;
+    private Game_Manager m_gameManager;
     [Tooltip("+/- this value to spawnpoint X value for spawning range")]
     [SerializeField] private int spawnRange;
     [SerializeField] private bool aboveLimit = false;
     [SerializeField] private float m_spawnDelay;
+
+    private void Awake()
+    {
+        m_gameManager = FindObjectOfType<Game_Manager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +49,7 @@ public class Stockpile_Manager : MonoBehaviour
         if (aboveLimit)
         {
             Debug.Log("<color=red>Too many shipments - fail.</color>");
-            // TODO: Jump to end screen or something
+            m_gameManager.EndGame();
         }
 
         //int numToSpawn = Random.Range(1, spawnMax + 1);

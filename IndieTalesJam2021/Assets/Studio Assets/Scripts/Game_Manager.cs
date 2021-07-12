@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Game_Manager : MonoBehaviour
     private Timeline_Animate m_timelineAnimate;
     private Timeline_Manager m_timelineManager;
     private Stockpile_Manager m_stockManager;
+    private Game_SaleTracker m_saleTracker;
     private int m_currentDay;
 
 
@@ -44,6 +46,7 @@ public class Game_Manager : MonoBehaviour
         m_timelineAnimate = FindObjectOfType<Timeline_Animate>();
         m_timelineManager = FindObjectOfType<Timeline_Manager>();
         m_stockManager = FindObjectOfType<Stockpile_Manager>();
+        m_saleTracker = FindObjectOfType<Game_SaleTracker>();
         m_currentDay = 1;
 
         GenerateAllDays();
@@ -51,6 +54,7 @@ public class Game_Manager : MonoBehaviour
 
     private void Start()
     {
+        m_saleTracker.ResetSaleList();
         StartNewDay();
     }
 
@@ -89,6 +93,8 @@ public class Game_Manager : MonoBehaviour
     
     public void EndDay()
     {
+        GameObject.FindGameObjectWithTag("DayButton").transform.DOPunchScale(Vector3.one * 0.1f, 0.25f);
+
         // Generate a new day for the future
         m_upcomingDays.Enqueue(GenerateNewDay());
 
@@ -131,5 +137,11 @@ public class Game_Manager : MonoBehaviour
         }
 
         return newDayDesc;
+    }
+
+    public void EndGame()
+    {
+        FindObjectOfType<Game_SaleTracker>().SetFinalScore(FindObjectOfType<Game_Score>().GetScore());
+        GetComponent<Util_SceneLoader>().LoadSceneByName("EndScreen");
     }
 }

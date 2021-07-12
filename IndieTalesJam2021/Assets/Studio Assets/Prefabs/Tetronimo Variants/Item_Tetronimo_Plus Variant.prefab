@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1321535685828583060, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
+      propertyPath: m_itemShape
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2659688086932734406, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5258050140021609158, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_Name
-      value: Item_Tetronimo_Plus
+      value: Item_Tetronimo_Plus Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7094177540769960769, guid: 07496b96d9fb9044396a8a3a7cdc49b4, type: 3}
       propertyPath: m_IsActive
