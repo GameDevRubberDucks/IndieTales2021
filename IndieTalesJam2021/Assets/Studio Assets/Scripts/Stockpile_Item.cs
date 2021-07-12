@@ -56,6 +56,10 @@ public class Stockpile_Item : MonoBehaviour
     public void RemoveFromStockpile()
     {
         //FindObjectOfType<Game_SaleTracker>().AddSale(this.m_itemType, this.m_itemSprite, m_itemController.m_itemShape);
+        var fxObjs = GetComponentsInChildren<Tile_VFX>();
+        foreach (var fx in fxObjs)
+            fx.PlayFX(Tile_VFXType.Stockpile_Removal);
+
         Destroy(this.gameObject);
     }
 }

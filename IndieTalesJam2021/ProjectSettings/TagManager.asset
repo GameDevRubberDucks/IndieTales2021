@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PhysicsObjects
   - ExitPoint
+  - MoneyButton
+  - MoneyFX
+  - DayButton
   layers:
   - Default
   - TransparentFX

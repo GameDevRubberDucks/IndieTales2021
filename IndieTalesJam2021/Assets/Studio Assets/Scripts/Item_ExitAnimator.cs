@@ -16,6 +16,8 @@ public class Item_ExitAnimator : MonoBehaviour
     {
         GetComponent<Grid_Snapper>().enabled = false;
         GetComponent<Tile_Aligner>().enabled = false;
+
+        GetComponent<Tile_VFX>().PlayFX(Tile_VFXType.Removal);
         
         Vector3 endPos = GameObject.FindWithTag("ExitPoint").transform.position;
 
@@ -26,6 +28,15 @@ public class Item_ExitAnimator : MonoBehaviour
         newSequence.Join(transform.DORotate(new Vector3(0.0f, 0.0f, Random.Range(m_rotationRange.x, m_rotationRange.y)), animationDuration));
 
         yield return newSequence.WaitForCompletion();
+
+        GetComponent<Tile_VFX>().PlayFX(Tile_VFXType.Sold);
+
+        var moneyButton = GameObject.FindGameObjectWithTag("MoneyButton").transform;
+        if (!DOTween.IsTweening(moneyButton))
+        {
+            moneyButton.DOPunchScale(Vector3.one * 0.1f, 0.1f, 10, 1.0f);
+            GameObject.FindGameObjectWithTag("MoneyFX").GetComponent<ParticleSystem>().Play();
+        }
 
         Destroy(this.gameObject);
     }

@@ -93,6 +93,7 @@
     <Compile Include="Assets\Studio Assets\Scripts\Tile_Aligner.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Audio_Manager.cs" />
     <Compile Include="Assets\Studio Assets\Scripts\Item_ExitAnimator.cs" />
+    <Compile Include="Assets\Studio Assets\Scripts\Tile_VFX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

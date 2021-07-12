@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -92,6 +93,8 @@ public class Game_Manager : MonoBehaviour
     
     public void EndDay()
     {
+        GameObject.FindGameObjectWithTag("DayButton").transform.DOPunchScale(Vector3.one * 0.1f, 0.25f);
+
         // Generate a new day for the future
         m_upcomingDays.Enqueue(GenerateNewDay());
 

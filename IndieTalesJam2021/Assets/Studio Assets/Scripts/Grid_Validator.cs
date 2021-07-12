@@ -46,6 +46,9 @@ public class Grid_Validator : MonoBehaviour
 
         // Enable the tile grid snapper to ensure the tile stays put now
         GetComponent<Grid_Snapper>().enabled = true;
+
+        // Play the placement particles
+        GetComponent<Tile_VFX>().PlayFX(Tile_VFXType.Placement);
     }
 
 
